@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	{{message}}
+</div>
+<div id="app-2">
+	<span v-bind:title='message'>
+		Наведи курсор
+	</span>
+</div>
+<div id="app-3">
+	<span v-if='seen'>Сейчас меня видно</span>
+</div>
+<div id="app-4">
+	<ol>
+		<li v-for="todo in todos">{{todo.text}}</li>
+	</ol>
+</div>
+<div id='app-5'>
+	<span>{{message}}</span>
+	<button v-on:click="reversButton_handler">кликни</button>
+</div>
+<div id='app-6'>
+	<p>{{message}}</p>
+	<input v-model="message">
+</div>
+<ol id="app-7">
+	<!-- Создаём экземпляр компонента todo-item -->
+	<todo-item 
+	v-for='item in groseryList'
+	v-bind:todo='item'
+	v-bind:key='item.id'
+	></todo-item>
+</ol>
+<script type="text/javascript" src="my.js"></script>
+</body>
+</html>
