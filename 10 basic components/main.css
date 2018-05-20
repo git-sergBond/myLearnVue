@@ -1,0 +1,9 @@
+.switch-transition{
+    transform: all 5s erase-in-out;
+}
+.switch-enter{
+    left: 100%;
+}
+.switch-leave{
+    left: -100%;
+}
