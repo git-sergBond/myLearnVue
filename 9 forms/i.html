@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link rel="stylesheet" href='main.css'>
+</head>
+<body>
+<!--меню-->
+<div id="components-demo">
+	<div ><!-- СПРОСИТЬ ПОЧЕМУ НЕ МЕНЯЕТСЯ КОМПОНЕНт, если это добавить в ДИВ  v-show="curentView='menu'"-->
+		<button @click="SwitchView('cliker1')">cliker1</button>
+		<button @click="SwitchView('cliker2')">cliker2</button>
+	</div>
+	<component :is=curentView transition="switch"></component>
+</div>
+
+<!--анкетирование-->
+<template id='cliker1-tmp'>
+	<button v-on:click="count++">анкетирование {{ count }} times.</button>
+</template>
+
+<!--конфг тестов-->
+<template id='cliker2-tmp'>
+	<div>
+		<button v-on:click="count++">конфг тестов {{ count }} times.</button>
+		<button>exit</button>
+	</div>
+</template>
+
+
+<script type="text/javascript" src="my.js"></script>
+</body>
+</html>
