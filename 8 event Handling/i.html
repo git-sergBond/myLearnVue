@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+	<button @click="counter++">+1</button>
+	<p>key pressed {{ counter }} count</p>
+	<div style="height: 100px; overflow: scroll" @scroll.passive="counter++">
+		<p v-for="e in [1,2,3,4,5,6,7,8]">{{e}}</p>
+	</div>
+</div>
+<div id="ex2">
+	<button @click="greet">поприветствовать</button>
+	<button @click="say('hay')">say hi</button>
+	<button @click="say('what')">say what</button>
+	<button @click="warn('форма пок не может быть отправлена',$event)">$event</button>
+	<form @submit.prevent>
+		<p @click="say('123')">123 ----- <a @click.stop="say('123')">123</a>
+			<button @click.stop.prevent="say('123')">123</button>
+		</p>
+		<p @click.capture = "say('1')">сфзе</p>
+		<p @click.self= "say('1')">1         <span @click= "say('2')">2</span></p>
+		<a v-on:click.once="say('1')">one</a>
+	</form>
+	
+</div>
+<script type="text/javascript" src="my.js"></script>
+</body>
+</html>
